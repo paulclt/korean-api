@@ -3,6 +3,8 @@ import Unit from "#models/unit"
 
 export default class UnitsController {
     async getAllUnits() {
-        return await Unit.all()
+        return await Unit
+        .query()
+        .orderBy('id', 'asc')
     }
 }
