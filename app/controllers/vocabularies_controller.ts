@@ -3,7 +3,9 @@ import vocabulary from "#models/vocabulary"
 
 export default class VocabulariesController {
     async getAllVocab() {
-        return await vocabulary.all()
+        return await vocabulary
+        .query()
+        .orderBy('id', 'asc')
     }
 
     async getVocab({params} : HttpContext) {
